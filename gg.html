@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESP TKR 11 - Explaining Engine Problems</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--yellow:#FFD700;--red:#FF2222;--bg:#070a12;--card:#131722;--card2:#1c2133}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:#e8e8e8;font-family:'Rajdhani',sans-serif;line-height:1.6;background-image: radial-gradient(circle at 20% 30%, rgba(255,215,0,0.07) 0%, transparent 40%), repeating-linear-gradient(90deg, transparent 0 120px, rgba(255,255,255,0.02) 120px 121px)}
+  header{text-align:center;padding:25px 15px;background:linear-gradient(180deg,#151a2e,#070a12);border-bottom:3px solid var(--yellow);position:sticky;top:0;z-index:10;backdrop-filter:blur(6px)}
+ .logo{width:95px;height:95px;object-fit:contain;filter:drop-shadow(0 0 12px var(--yellow))}
+  h1{font-family:'Orbitron',sans-serif;color:var(--yellow);margin:10px 0 0;font-size:2em;letter-spacing:2px;text-shadow:0 0 15px rgba(255,215,0,.6)}
+ .sub{letter-spacing:4px;color:#888;font-size:.85em}
+ .container{max-width:1000px;margin:auto;padding:18px}
+ .card{background:var(--card);border:1px solid #252a40;border-radius:12px;padding:22px;margin:22px 0;box-shadow:0 8px 30px rgba(0,0,0,.6);border-left:5px solid var(--yellow);position:relative;overflow:hidden}
+ .card:before{content:'';position:absolute;top:0;right:0;width:120px;height:3px;background:var(--red)}
+  h2{font-family:'Orbitron',sans-serif;color:var(--yellow);font-size:1.25em;margin:0 0 12px}
+  h3{color:#fff;margin:18px 0 8px;border-left:3px solid var(--red);padding-left:10px;font-family:'Orbitron',sans-serif;font-size:1em}
+ .vocab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+ .vocab-item{background:var(--card2);padding:10px 14px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;border:1px solid #2a2f4a;cursor:pointer;transition:.2s}
+ .vocab-item:hover{background:#232a45;transform:translateY(-2px);box-shadow:0 0 12px rgba(255,215,0,.3)}
+ .id{color:#aaa;font-size:.9em}.en{font-weight:700;color:#fff}
+ .speak-btn{background:var(--yellow);color:#000;border:none;border-radius:20px;padding:4px 10px;font-weight:900;cursor:pointer}
+ .pattern{background:#0f1320;border:1px dashed #2f3655;padding:14px;border-radius:8px;margin:10px 0}
+ .formula{font-family:'Orbitron',sans-serif;color:var(--yellow);font-size:1.05em;background:#000;padding:8px 12px;border-radius:6px;display:inline-block;margin:6px 0}
+ .sentence{background:var(--card2);padding:12px 14px;border-radius:8px;margin:8px 0;cursor:pointer;border-left:3px solid var(--red);transition:.2s;position:relative}
+ .sentence:hover{background:#252e4f;border-left-color:var(--yellow)}
+ .sentence:after{content:'🔊';position:absolute;right:12px;top:12px;opacity:.6}
+ .dialog{background:linear-gradient(135deg,#1a1f35,#11131e);border:1px solid #30385a;border-radius:10px;padding:15px}
+ .dialog p{margin:8px 0}
+ .tag{display:inline-block;background:var(--red);color:white;padding:2px 8px;border-radius:4px;font-size:.75em;margin-right:6px;font-family:'Orbitron'}
+ .tag.customer{background:#2d6bff}
+ .latihan{background:#1a1a10;border-left-color:#6aff00}
+ .tugas{background:linear-gradient(135deg,#1a1a2e,#2a1a1a);border-left-color:var(--red);text-align:center}
+ .btn-main{background:var(--yellow);color:#000;font-family:'Orbitron';font-weight:900;padding:12px 20px;border:none;border-radius:8px;cursor:pointer;box-shadow:0 0 15px rgba(255,215,0,.5)}
+ .speed{height:3px;background:linear-gradient(90deg,transparent,var(--yellow),transparent);animation:move 1.5s linear infinite}
+  @keyframes move{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+</style>
+</head>
+<body>
+<header>
+  <img src="logob.png" class="logo" alt="logob" onerror="this.style.display='none'">
+  <h1>EXPLAINING ENGINE PROBLEMS</h1>
+  <div class="sub">ESP TKR KELAS 11 // RACING EDITION // DARK MODE</div>
+  <div class="speed"></div>
+</header>
+
+<div class="container">
+
+<div class="card">
+  <h2>🎯 TUJUAN PEMBELAJARAN</h2>
+  <div class="sentence" onclick="speak('Students are able to explain engine damage to customers in polite, clear and professional English.')">
+  Siswa mampu menjelaskan kerusakan mesin ke pelanggan dengan bahasa Inggris yang sopan, jelas, dan profesional. <br><em>Students are able to explain engine damage to customers in polite, clear and professional English.</em>
+  </div>
+</div>
+
+<div class="card">
+  <h2>🏁 PIT 1: VOCABULARY WAJIB - GEJALA KERUSAKAN</h2>
+  <p>Hafalin dulu, jangan bilang "mesin rusak" doang. Klik untuk dengar suara:</p>
+  <div class="vocab-grid">
+    <div class="vocab-item" onclick="speak('Hard to start. Difficult to start.')"><div><div class="id">Mesin susah hidup</div><div class="en">Hard to start / Difficult to start</div></div><button class="speak-btn">🔊</button></div>
+    <div class="vocab-item" onclick="speak('Engine misfires. Rough idle.')"><div><div class="id">Mesin brebet / pincang</div><div class="en">Engine misfires / Rough idle</div></div><button class="speak-btn">🔊</button></div>
+    <div class="vocab-item" onclick="speak('Engine overheating')"><div><div class="id">Mesin overheat</div><div class="en">Engine overheating</div></div><button class="speak-btn">🔊</button></div>
+    <div class="vocab-item" onclick="speak('Loss of power. Lack of power.')"><div><div class="id">Tenaga ngempos / lemot</div><div class="en">Loss of power / Lack of power</div></div><button class="speak-btn">🔊</button></div>
+    <div class="vocab-item" onclick="speak('Strange noise. Knocking sound.')"><div><div class="id">Suara kasar / ngelitik</div><div class="en">Strange noise / Knocking sound</div></div><button class="speak-btn">🔊</button></div>
+    <div class="vocab-item" onclick="speak('Oil leak')"><div><div class="id">Oli bocor</div><div class="en">Oil leak</div></div><button class="speak-btn">🔊</button></div>
+    <div class="vocab-item" onclick="speak('High fuel consumption')"><div><div class="id">Boros bensin</div><div class="en">High fuel consumption</div></div><button class="speak-btn">🔊</button></div>
+    <div class="vocab-item" onclick="speak('Black smoke. White smoke from exhaust.')"><div><div class="id">Asap knalpot hitam/putih</div><div class="en">Black / White smoke from exhaust</div></div><button class="speak-btn">🔊</button></div>
+    <div class="vocab-item" onclick="speak('Excessive vibration')"><div><div class="id">Getaran kuat</div><div class="en">Excessive vibration</div></div><button class="speak-btn">🔊</button></div>
+  </div>
+  <h3>Komponen Penting</h3>
+  <div style="display:flex;flex-wrap:wrap;gap:8px">
+    <span class="vocab-item" onclick="speak('spark plug')">spark plug (busi) 🔊</span>
+    <span class="vocab-item" onclick="speak('piston')">piston 🔊</span>
+    <span class="vocab-item" onclick="speak('radiator')">radiator 🔊</span>
+    <span class="vocab-item" onclick="speak('fuel injector')">fuel injector 🔊</span>
+    <span class="vocab-item" onclick="speak('oil filter')">oil filter 🔊</span>
+    <span class="vocab-item" onclick="speak('timing belt')">timing belt 🔊</span>
+    <span class="vocab-item" onclick="speak('battery')">battery 🔊</span>
+    <span class="vocab-item" onclick="speak('engine oil')">engine oil 🔊</span>
+  </div>
+</div>
+
+<div class="card">
+  <h2>🏁 PIT 2: RUMUS KALIMAT - 4 POLA SAKTI</h2>
+  <h3>Pola 1: Untuk menyebutkan masalah (The Problem)</h3>
+  <div class="pattern">
+    <div class="formula">The problem is + [kerusakan] + on/in + [komponen]</div>
+    <div class="sentence" onclick="speak('The problem is an oil leak in the engine.')">The problem is an oil leak in the engine.</div>
+    <div class="sentence" onclick="speak('The problem is a misfire on cylinder number 2.')">The problem is a misfire on cylinder number 2.</div>
+  </div>
+  <h3>Pola 2: Untuk menjelaskan gejala (The Symptom)</h3>
+  <div class="pattern">
+    <div class="formula">The engine + [gejala] + when/because...</div>
+    <div class="sentence" onclick="speak('The engine is overheating because the radiator is clogged.')">The engine is overheating because the radiator is clogged.</div>
+    <div class="sentence" onclick="speak('The engine makes a knocking sound when you accelerate.')">The engine makes a knocking sound when you accelerate.</div>
+  </div>
+  <h3>Pola 3: Untuk menjelaskan penyebab (The Cause)</h3>
+  <div class="pattern">
+    <div class="formula">It seems that / This is caused by + [penyebab]</div>
+    <div class="sentence" onclick="speak('It seems that the spark plug is dirty.')">It seems that the spark plug is dirty.</div>
+    <div class="sentence" onclick="speak('This is caused by a clogged fuel filter.')">This is caused by a clogged fuel filter.</div>
+  </div>
+  <h3>Pola 4: Untuk menawarkan solusi (The Solution)</h3>
+  <div class="pattern">
+    <div class="formula">We need to + / I recommend + -ing + [tindakan]</div>
+    <div class="sentence" onclick="speak('We need to replace the spark plug.')">We need to replace the spark plug.</div>
+    <div class="sentence" onclick="speak('I recommend cleaning the radiator and changing the coolant.')">I recommend cleaning the radiator and changing the coolant.</div>
+    <div class="sentence" onclick="speak('It will cost around five hundred thousand and take about two hours.')">It will cost around... and take about 2 hours.</div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>🏁 PIT 3: CONTOH DIALOG LENGKAP</h2>
+  <div class="dialog">
+    <p><span class="tag customer">CUSTOMER</span><span class="sentence" onclick="speak('Good morning. My car has a problem. The engine is hard to start in the morning.')">Good morning. My car has a problem. The engine is hard to start in the morning.</span></p>
+    <p><span class="tag">MECHANIC</span><span class="sentence" onclick="speak('Good morning, Sir. I understand. Does the engine make any strange noise?')">Good morning, Sir. I understand. Does the engine make any strange noise?</span></p>
+    <p><span class="tag customer">CUSTOMER</span><span class="sentence" onclick="speak('Yes, there is a clicking sound.')">Yes, there is a clicking sound.</span></p>
+    <p><span class="tag">MECHANIC</span><span class="sentence" onclick="speak('Okay. Let me check. It seems that the battery is weak and the spark plug is dirty. This is caused by lack of maintenance.')">Okay. Let me check. It seems that the battery is weak and the spark plug is dirty. This is caused by lack of maintenance.</span></p>
+    <p><span class="tag customer">CUSTOMER</span><span class="sentence" onclick="speak('What should we do?')">What should we do?</span></p>
+    <p><span class="tag">MECHANIC</span><span class="sentence" onclick="speak('We need to replace the battery and clean the spark plugs. It will take about one hour and cost around 500 thousand rupiah. Is that okay?')">We need to replace the battery and clean the spark plugs. It will take about one hour and cost around 500 thousand rupiah. Is that okay?</span></p>
+    <p><span class="tag customer">CUSTOMER</span><span class="sentence" onclick="speak('Okay, please do it.')">Okay, please do it.</span></p>
+  </div>
+</div>
+
+<div class="card latihan">
+  <h2>🏁 PIT 4: LATIHAN - UBAH KELUHAN JADI PRO</h2>
+  <div class="sentence" onclick="speak('Sir, the engine misfires, has a rough idle. It looks like there is a problem with the fuel injector.')">
+    <b>1. Keluhan: "Mobilnya brebet pas langsam"</b><br>➡️ Jawaban Pro: Sir, the engine misfires / has a rough idle. It looks like there is a problem with the fuel injector.
+  </div>
+  <div class="sentence" onclick="speak('The problem is engine overheating. This is caused by a leak in the radiator. We need to fix the leak.')">
+    <b>2. Keluhan: "Mesin panas terus, air radiator habis mulu"</b><br>➡️ Jawaban Pro: The problem is engine overheating. This is caused by a leak in the radiator. We need to fix the leak.
+  </div>
+  <div class="sentence" onclick="speak('There is a loss of power when climbing. It seems that the air filter is clogged. I recommend replacing it.')">
+    <b>3. Keluhan: "Tenaga ngempos di tanjakan Ketapang"</b><br>➡️ Jawaban Pro: There is a loss of power when climbing. It seems that the air filter is clogged. I recommend replacing it.
+  </div>
+</div>
+
+<div class="card tugas">
+  <h2>🏁 FINAL LAP: TUGAS KELAS</h2>
+  <p>Buat 1 video pendek (1 menit) role-play.<br>Satu jadi pelanggan yang komplain:</p>
+  <div class="sentence" onclick="speak('My car has black smoke and high fuel consumption')"><b>"My car has black smoke and high fuel consumption"</b></div>
+  <p>Satu jadi mekanik yang menjelaskan masalah dan solusinya pakai 4 pola di atas.</p>
+  <br>
+  <button class="btn-main" onclick="speak('Good job, TKR students! You are ready to be a professional mechanic!')">START ENGINE! 🔊</button>
+</div>
+
+</div>
+
+<script>
+function speak(text){
+  if(!('speechSynthesis' in window)){alert('Browser tidak support TTS');return}
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang='en-US'; u.rate=0.9;
+  const voices = window.speechSynthesis.getVoices();
+  const v = voices.find(x=>x.lang.includes('en-US') && x.name.includes('Google')) || voices.find(x=>x.lang.includes('en-US'));
+  if(v) u.voice=v;
+  window.speechSynthesis.speak(u);
+}
+window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+</script>
+</body>
+</html>
